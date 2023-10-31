@@ -30,7 +30,20 @@ namespace es._9____Classe_Frazione
             get { return denominatore; }
             set { denominatore = value; }
         }
-   
+        //Funzione MCD per la funzione SemplificaRrazione
+        private int MCD(int a, int b)
+        {
+            if (b == 0)
+            return a;
+            return MCD(b, a % b);
+        }
+        //Funzione semplifica frazione
+        public void SemplificaFrazione()
+        {
+            int mcd = MCD(Numeratore, Denominatore);
+            Numeratore /= mcd;
+            Denominatore /= mcd;
+        }
     }
     
 }
