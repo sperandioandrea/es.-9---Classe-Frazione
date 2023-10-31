@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,10 +14,10 @@ namespace es._9____Classe_Frazione
         private int denominatore;
 
         //costruttore
-        public Frazione()
+        public Frazione(int numeratore, int denominatore)
         {
-            numeratore = 0;
-            denominatore = 0;
+            Numeratore = numeratore;
+            Denominatore = denominatore;
         }
         //metodi Get e Set
         public int Numeratore
@@ -29,9 +30,7 @@ namespace es._9____Classe_Frazione
             get { return denominatore; }
             set { denominatore = value; }
         }
-
-
-
+   
     }
     
 }

@@ -12,9 +12,11 @@ namespace es._9____Classe_Frazione
 {
     public partial class Form1 : Form
     {
+        Frazione numF;
         public Form1()
         {
             InitializeComponent();
+            numF = new Frazione();
         }
 
         private void Form1_Load(object sender, EventArgs e)
