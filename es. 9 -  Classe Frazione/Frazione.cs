@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace es._9____Classe_Frazione
 {
-    internal class Frazione
+    class Frazione
     {
+        //Attributi
+        private int numeratore;
+        private int denominatore;
+
+       
+
+
     }
+    
 }
