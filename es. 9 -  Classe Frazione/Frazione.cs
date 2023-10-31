@@ -12,6 +12,13 @@ namespace es._9____Classe_Frazione
         private int numeratore;
         private int denominatore;
 
+        //costruttore
+        public Frazione()
+        {
+            numeratore = 0;
+            denominatore = 0;
+        }
+        
        
 
 
