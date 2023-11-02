@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,14 +13,26 @@ namespace es._9____Classe_Frazione
         //Attributi
         private int numeratore;
         private int denominatore;
-
+        //other = frazione2
         //costruttore
         public Frazione(int numeratore, int denominatore)
         {
-            Numeratore = numeratore;
-            Denominatore = denominatore;
+            this.numeratore = numeratore;
+            this.denominatore = denominatore;
         }
-        //metodi Get e Set
+        //creazione 2° oggetto (2° frazione)
+        public Frazione(Frazione frazione2)
+        {
+            this.numeratore = frazione2.numeratore;
+            this.denominatore = frazione2.denominatore;
+        }
+        //metodo Clone
+        public Frazione Clone()
+        {
+            return new Frazione(this);
+        }
+
+        /*/metodi Get e Set
         public int Numeratore
         {
             get { return numeratore; }
@@ -29,21 +42,33 @@ namespace es._9____Classe_Frazione
         {
             get { return denominatore; }
             set { denominatore = value; }
-        }
+        }/*/
+
         //Funzione MCD per la funzione SemplificaRrazione
-        private int MCD(int a, int b)
+        public int MCD(int a, int b)
         {
-            if (b == 0)
+            while(b != 0)
+            {
+                int temp = b;
+                b = a % b;
+                a = temp;
+            }
             return a;
-            return MCD(b, a % b);
         }
         //Funzione semplifica frazione
         public void SemplificaFrazione()
         {
-            int mcd = MCD(Numeratore, Denominatore);
-            Numeratore /= mcd;
-            Denominatore /= mcd;
+            int mcd = MCD(numeratore, denominatore);
+            numeratore /= mcd;
+            denominatore /= mcd;
         }
+
+        //Funzione Somma
+        public void Somma()
+        {
+
+        }
+
     }
     
 }
